@@ -6,8 +6,7 @@ async function findData(query) {
         const collection = db.collection("jobs");
 
         const documents = await collection.find(query || {}).toArray();  
-
-        console.log("Fetched Documents:", documents);
+        
         return documents;
     } catch (error) {
         console.error("Error fetching documents:", error);

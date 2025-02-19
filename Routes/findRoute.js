@@ -8,13 +8,13 @@ router.post('/', async (req, res) => {
         const { email, password, type } = req.body;
         console.log({ email, password, type });
 
-        const user = await findData({ email });
+        const user = await findData({ email, type });
 
         if (!user[0]) {
             return res.json({ status: 'error', error: 'user not found' });
         }
         if (user[0].type !== type) {
-            console.log("USeru:" + user[0].type)
+            console.log("User:" + user[0].type)
             return res.json({ status: 'error', error: 'Type miss match' });
         }
         if (user[0].password !== password) {

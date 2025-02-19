@@ -6,6 +6,7 @@ import deleteManyRoute from "./Routes/deleteManyRoute.js";
 import connectDB from "./Mongo Query/connectDB.js";
 import openJobsRoute from "./Routes/openJobsRoute.js";
 import cors from 'cors';
+import bodyParser from "body-parser";
 
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(cors({
 }));
 dotenv.config();
 app.use(express.json());
+app.use(bodyParser.json());
 
 
 app.use("/insert", insertManyRoute);
