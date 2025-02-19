@@ -4,7 +4,7 @@ import fetchJobs from "../Mongo Query/fetchJobs.js";
 const app = express();
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.post("/", async (req, res) => {
     try {
         const jobs = await fetchJobs(); 
 
