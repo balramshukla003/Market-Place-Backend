@@ -8,7 +8,7 @@ async function findData(query) {
 
         const documents = await collection.find(query || {}).toArray();  // Use the query if provided
 
-        console.log("Fetched Documents:", documents);
+        console.log("fetched login deatail successfully");
         return documents;
     } catch (error) {
         console.error("Error fetching documents:", error);

@@ -11,8 +11,7 @@ router.post("/", async (req, res) => {
         if (!jobs || jobs.length === 0) {
             return res.status(404).json({ error: "No jobs found" });
         }
-
-        console.log("Fetched jobs:", jobs);
+        console.log("Fetched jobs successfully");
         res.json({ jobs });
     } catch (error) {
         console.error("Error fetching jobs:", error);

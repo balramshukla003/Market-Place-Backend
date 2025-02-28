@@ -1,12 +1,15 @@
-import express from "express";
+import cors from 'cors';
 import dotenv from "dotenv";
-import insertManyRoute from "./Routes/insertRoute.js";
-import findRoute from "./Routes/findRoute.js";
+import express from "express";
+import bodyParser from "body-parser";
+
+import insertManyRoute from "./Routes/registerRoute.js";
+import loginRoute from "./Routes/loginRoute.js";
 import deleteManyRoute from "./Routes/deleteManyRoute.js";
 import connectDB from "./Mongo Query/connectDB.js";
 import openJobsRoute from "./Routes/openJobsRoute.js";
-import cors from 'cors';
-import bodyParser from "body-parser";
+import insertJobRoute from "./Routes/insertJobRout.js";
+import ProtectedRoute from './Routes/ProtectedRoute.js';
 
 
 const app = express();
@@ -19,15 +22,17 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 
-app.use("/insert", insertManyRoute);
-app.use("/find", findRoute);
+app.use("/register", insertManyRoute);
+app.use("/login", loginRoute);
 app.use("/delete", deleteManyRoute);
 app.use("/fetchJobs", openJobsRoute);
+app.use("/insertJob", insertJobRoute);
+app.use("/protected", ProtectedRoute);
 
 
 connectDB();
 app.get("/", (req, res) => {
-    res.send("Hello, this is a simple REST API for inserting documents into a MongoDB database.");
+    res.send("Hello, this is a simple REST API for communicating with MongoDB database. Author-Balram Shukla");
 });
 
 const PORT = process.env.PORT || 3000;
