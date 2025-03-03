@@ -14,11 +14,11 @@ router.post('/', async (req, res) => {
         const user = await findData({ email, type });
 
         if (!user[0]) {
-            return res.json({ status: 'error', error: 'User not found' });
+            return res.json({ status: 'error', error: 'user not found' });
         }
         if (user[0].type !== type) {
             console.log("User:" + user[0].type);
-            return res.json({ status: 'error', error: 'Type mismatch' });
+            return res.json({ status: 'error', error: 'Type miss match' });
         }
         if (user[0].password !== password) {
             return res.json({ status: 'error', error: 'Password not matched' });

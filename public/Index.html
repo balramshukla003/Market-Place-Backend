@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Status | Market Place API</title>
+
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --success: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            color: var(--dark);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+        }
+
+        .status-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--success);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin: 1.5rem 0 0.5rem;
+            font-size: 2.2rem;
+        }
+
+        .author {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+
+        .section {
+            margin: 2.5rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .section-title {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="status-header">
+            <div class="status-indicator">
+                <span>●</span> Server Operational
+            </div>
+            <h1>Market Place API</h1>
+            <div class="author">Developed by Balram Shukla</div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">About REST API</h2>
+            <div class="feature-card">
+                <p>This RESTful API follows architectural constraints providing:</p>
+                <ul>
+                    <li>Standard HTTP methods (GET, POST, PUT, DELETE)</li>
+                    <li>Stateless client-server communication</li>
+                    <li>Resource-based endpoints</li>
+                    <li>JSON request/response format</li>
+                    <li>Standard HTTP status codes</li>
+                    <li>Clear error handling</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Version 1.2.0 | Production Environment</p>
+            <p>⚡ Powered by Express.js</p>
+        </footer>
+    </div>
+</body>
+
+</html>

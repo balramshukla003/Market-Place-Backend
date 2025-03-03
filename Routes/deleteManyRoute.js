@@ -3,7 +3,7 @@ import deleteMany from "../Mongo Query/deleteMany.js";
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
 
     try {
         const query = { };  

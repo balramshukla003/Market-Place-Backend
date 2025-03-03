@@ -1,5 +1,4 @@
 import connectDB from "./connectDB.js";
-import findData from "./findData.js";
 
 async function insertOne(data) {
     try {
