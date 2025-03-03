@@ -2,9 +2,7 @@ import cors from 'cors';
 import dotenv from "dotenv";
 import express from "express";
 import bodyParser from "body-parser";
-
 import path from "path";
-import { fileURLToPath } from "url";
 
 import insertManyRoute from "./Routes/registerRoute.js";
 import loginRoute from "./Routes/loginRoute.js";
@@ -15,15 +13,15 @@ import insertJobRoute from "./Routes/insertJobRout.js";
 import ProtectedRoute from './Routes/ProtectedRoute.js';
 import updateUserRoute from './Routes/updateUserRoute.js'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const app = express();
+
 app.use(cors());
 dotenv.config();
 app.use(express.json());
 app.use(bodyParser.json());
 
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/register", insertManyRoute);
 app.use("/login", loginRoute);
