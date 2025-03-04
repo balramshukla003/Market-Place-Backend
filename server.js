@@ -18,6 +18,16 @@ import { fileURLToPath } from 'url';
 const app = express();
 
 app.use(cors());
+app.use(cors({
+    origin: ['https://marketplaceplatform.netlify.app'],
+    credentials: true,
+    methods: 'GET, POST, PUT, DELETE',
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+
+
+
 dotenv.config();
 app.use(express.json());
 app.use(bodyParser.json());
