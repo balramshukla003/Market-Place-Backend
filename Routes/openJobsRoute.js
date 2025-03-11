@@ -5,9 +5,13 @@ const app = express();
 const router = express.Router();
 
 router.post("/", async (req, res) => {
-    try {
-        const jobs = await fetchJobs();
 
+
+    const Query = req.body.query;
+    console.log("backend: ", Query)
+
+    try {
+        const jobs = await fetchJobs(Query);
         if (!jobs || jobs.length === 0) {
             return res.status(404).json({ error: "No jobs found" });
         }
@@ -17,6 +21,8 @@ router.post("/", async (req, res) => {
         console.error("Error fetching jobs:", error);
         res.status(500).json({ error: "An error occurred while fetching jobs" });
     }
+
+
 });
 
 export default router;

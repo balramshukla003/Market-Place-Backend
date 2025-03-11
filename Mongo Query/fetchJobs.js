@@ -1,12 +1,12 @@
-import connectDB from "./connectDB.js"; 
+import connectDB from "./connectDB.js";
 async function findData(query) {
     try {
-        const client = await connectDB();  
+        const client = await connectDB();
         const db = client.db("openJobs");
         const collection = db.collection("jobs");
 
-        const documents = await collection.find(query || {}).toArray();  
-        
+        const documents = await collection.find(query || {}).toArray();
+
         return documents;
     } catch (error) {
         console.error("Error fetching documents:", error);
