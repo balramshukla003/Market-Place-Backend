@@ -1,5 +1,5 @@
 import express from "express";
-import authenticateToken from '../verifyTKN.js';
+import authenticateToken from '../JWT_TKN.js';
 
 const router = express.Router();
 router.post('/', async (req, res, next) => {
